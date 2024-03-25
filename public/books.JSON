@@ -1,0 +1,122 @@
+{
+    "books": [
+      {
+        "bookId": 1,
+        "bookName": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "image": "https://i.ibb.co/Y2pfXZ3/pngwing-1.png",
+        "review": "A timeless classic that delves into the complexities of the American Dream and the roaring twenties.",
+        "totalPages": 180,
+        "rating": 4.5,
+        "category": "Fiction",
+        "tags": ["Classic", "Romance"],
+        "publisher": "Scribner",
+        "yearOfPublishing": 1925
+      },
+      {
+        "bookId": 2,
+        "bookName": "1984",
+        "author": "George Orwell",
+        "image": "https://i.ibb.co/4dqLH10/kindpng-4945926-1.png",
+        "review": "A dystopian masterpiece that serves as a chilling warning about the dangers of totalitarianism and mass surveillance.",
+        "totalPages": 328,
+        "rating": 4.8,
+        "category": "Fiction",
+        "tags": ["Dystopian", "Political"],
+        "publisher": "Secker & Warburg",
+        "yearOfPublishing": 1949
+      },
+      {
+        "bookId": 3,
+        "bookName": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "image": "https://i.ibb.co/tXx5bbs/kindpng-2592315-1.png",
+        "review": "A poignant tale that addresses themes of racial injustice, moral growth, and empathy.",
+        "totalPages": 281,
+        "rating": 4.7,
+        "category": "Fiction",
+        "tags": ["Classic", "Coming-of-age"],
+        "publisher": "J. B. Lippincott & Co.",
+        "yearOfPublishing": 1960
+      },
+      {
+        "bookId": 4,
+        "bookName": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "image": "https://i.ibb.co/njS3Xj1/kindpng-5624060-1.png",
+        "review": "A captivating narrative following the disillusioned Holden Caulfield on his journey through adolescence.",
+        "totalPages": 224,
+        "rating": 4.4,
+        "category": "Fiction",
+        "tags": ["Classic", "Coming-of-age"],
+        "publisher": "Little, Brown and Company",
+        "yearOfPublishing": 1951
+      },
+      {
+        "bookId": 5,
+        "bookName": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "image": "https://i.ibb.co/34htJD6/kindpng-2193744-1.png",
+        "review": "A witty and romantic exploration of societal norms, love, and the complexities of human relationships.",
+        "totalPages": 279,
+        "rating": 4.6,
+        "category": "Fiction",
+        "tags": ["Romance", "Classic"],
+        "publisher": "T. Egerton, Whitehall",
+        "yearOfPublishing": 1813
+      },
+      {
+        "bookId": 6,
+        "bookName": "Harry Potter and the Philosopher's Stone",
+        "author": "J.K. Rowling",
+        "image": "https://i.ibb.co/CwNVx17/kindpng-81724-1.png",
+        "review": "A magical adventure that introduces readers to the enchanting world of Hogwarts School of Witchcraft and Wizardry.",
+        "totalPages": 309,
+        "rating": 4.9,
+        "category": "Fantasy",
+        "tags": ["Magic", "Adventure"],
+        "publisher": "Bloomsbury Publishing",
+        "yearOfPublishing": 1997
+      },
+      {
+        "bookId": 7,
+        "bookName": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "image": "https://i.ibb.co/RgCdWKK/kindpng-4022054-1.png",
+        "review": "An epic fantasy saga that follows the journey of Frodo Baggins to destroy the One Ring and defeat the Dark Lord Sauron.",
+        "totalPages": 1178,
+        "rating": 4.9,
+        "category": "Fantasy",
+        "tags": ["Epic", "Adventure"],
+        "publisher": "George Allen & Unwin",
+        "yearOfPublishing": 1954
+      },
+      {
+        "bookId": 8,
+        "bookName": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "image": "https://i.ibb.co/ypNVSvF/kindpng-1064993.png",
+        "review": "A gripping dystopian tale set in a future where teenagers are forced to compete in a televised fight to the death.",
+        "totalPages": 374,
+        "rating": 4.7,
+        "category": "Young Adult",
+        "tags": ["Dystopian", "Adventure"],
+        "publisher": "Scholastic Corporation",
+        "yearOfPublishing": 2008
+      },
+      {
+        "bookId": 9,
+        "bookName": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "image": "https://i.ibb.co/3dfy2Lt/kindpng-7318921.png",
+        "review": "A charming prelude to The Lord of the Rings, following the adventures of Bilbo Baggins as he embarks on a quest with dwarves.",
+        "totalPages": 310,
+        "rating": 4.6,
+        "category": "Fantasy",
+        "tags": ["Adventure", "Children's"],
+        "publisher": "George Allen & Unwin",
+        "yearOfPublishing": 1937
+      }
+    ]
+  }
+  

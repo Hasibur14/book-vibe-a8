@@ -1,16 +1,28 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import MainLayout from './assets/MainLayout/MainLayout.jsx'
+import Home from './Pages/Home'
+import ListedBooks from './Pages/ListedBooks'
+import MainLayout from './Root/MainLayout'
 import './index.css'
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element:<MainLayout></MainLayout>
+    element:<MainLayout></MainLayout>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path:'/listedbooks',
+        element: <ListedBooks></ListedBooks>
+      }
+    ]
   }
-])
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
