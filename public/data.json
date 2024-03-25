@@ -1,3 +1,4 @@
+
 {
     "books": [
       {
@@ -8,7 +9,7 @@
         "review": "A timeless classic that delves into the complexities of the American Dream and the roaring twenties.",
         "totalPages": 180,
         "rating": 4.5,
-        "category": "Fiction",
+        "category": "Young Adult",
         "tags": ["Classic", "Romance"],
         "publisher": "Scribner",
         "yearOfPublishing": 1925
