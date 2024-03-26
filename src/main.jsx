@@ -4,12 +4,13 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './Pages/Home'
 import ListedBooks from './Pages/ListedBooks'
 import MainLayout from './Root/MainLayout'
+import BookDetails from './components/BookDetails'
 import './index.css'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element:<MainLayout></MainLayout>,
+    element: <MainLayout></MainLayout>,
     children: [
       {
         path: '/',
@@ -17,7 +18,14 @@ const router = createBrowserRouter([
         loader: () => fetch('/data.json')
       },
       {
-        path:'/listedbooks',
+        path: "/book/:bookId",
+        element: <BookDetails></BookDetails>,
+        loader: ({ params }) =>
+          fetch(`/data.json`).then(res => res.json())
+            .then(data => data.books.find(book => book.bookId === parseInt(params.bookId)))
+      },
+      {
+        path: '/listedbooks',
         element: <ListedBooks></ListedBooks>
       }
     ]
@@ -26,6 +34,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router}></RouterProvider>
+    <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>,
 )

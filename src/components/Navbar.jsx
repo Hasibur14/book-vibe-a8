@@ -37,10 +37,10 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl gap-0  font-bold">Book<span className="text-sky-400">Vibe</span></a>
+                <a className="btn btn-ghost text-3xl gap-0 font-bold">Book<span className="text-sky-400">Vibe</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 font-bold">
+                <ul className="menu menu-horizontal px-1 text-[18px] font-bold">
                     {
                         links
                     }
