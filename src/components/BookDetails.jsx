@@ -1,10 +1,21 @@
 import { useLoaderData } from "react-router-dom";
+import { saveBook } from "./Utility";
 
 const BookDetails = () => {
     const book = useLoaderData();
     console.log(book)
     const { image, bookName, tags = [], author, review, rating, totalPages, publisher, yearOfPublishing, category } = book;
     console.log(book);
+
+
+    const handleReadBooks =(book)=>{
+       saveBook(book)
+
+    }
+    const handleWishlist =(book)=>{
+        console.log(book)
+        saveBook(book)
+    }
 
     return (
         <div>
@@ -41,8 +52,10 @@ const BookDetails = () => {
                             <p>Rating:        {rating}</p>
                         </div>
                         <div className="card-actions justify-start">
-                            <button className="btn w-24 bg-white hover:bg-green-500 hover:text-white border-2 border-green-400">READ</button>
-                            <button className="btn w-24 bg-sky-400 text-white hover:text-black">Wishlist</button>
+                          
+                           <button onClick={()=> handleReadBooks(book)} className="btn w-24 bg-white hover:bg-green-500 hover:text-white border-2 border-green-400">READ</button>
+                          
+                            <button onClick={() =>handleWishlist(book)} className="btn w-24 bg-sky-400 text-white hover:text-black">Wishlist</button>
                         </div>
                     </div>
                 </div>
