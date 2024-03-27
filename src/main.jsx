@@ -7,6 +7,7 @@ import ListedBooks from './Pages/ListedBooks'
 import MainLayout from './Root/MainLayout'
 import BookDetails from './components/BookDetails'
 
+import ReadPage from './Pages/ReadPage'
 import ReadBooks from './components/ReadBooks'
 import Wishlist from './components/Wishlist'
 import './index.css'
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
             element: <Wishlist></Wishlist>
           }
         ]
-      }
+      },
+      {
+        path: '/readPage',
+        element:<ReadPage></ReadPage>
+      },
     ]
   }
 ]);

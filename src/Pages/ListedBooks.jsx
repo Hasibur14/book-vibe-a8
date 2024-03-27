@@ -12,7 +12,7 @@ const ListedBooks = () => {
 
     return (
         <div>
-            <div className="bg-base-200 h-16 text-center rounded-lg mx-24 mt-10">
+            <div className="bg-base-200 h-16 text-center rounded-lg mx-24">
                 <h2 className="text-4xl font-bold">Books</h2>
             </div>
             <div className="mt-6 text-center">

@@ -5,7 +5,6 @@ import { getBooks } from "./Utility";
 const ReadBooks = () => {
 
     const [books, setBooks] = useState([]);
-    console.log(books)
 
     useEffect(() => {
         const storedBooks = getBooks();

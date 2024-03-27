@@ -22,11 +22,10 @@ const Navbar = () => {
     </>
 
 
-
     return (
-        <div className="lg:px-24">
-            <div className="navbar bg-base-100 static z-10 shadow  ">
-                <div className="navbar-start">
+        <div className="bg-base-100 fixed z-10 w-full">
+            <div className="navbar flex justify-between lg:mx-16">
+                <div className="navbar">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -46,7 +45,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <div className="navbar-end hidden lg:flex space-x-4">
+                <div className="navbar hidden lg:flex space-x-4 lg:ml-72">
                     <button className="btn bg-green-500 text-white ">Sign In</button>
                     <button className="btn bg-sky-400 text-white">Sign Up</button>
 

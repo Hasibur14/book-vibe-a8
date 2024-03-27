@@ -1,27 +1,32 @@
-import toast from 'react-hot-toast'
+// Utility.js
+
+import toast from 'react-hot-toast';
 
 export const getBooks = () => {
-  let books = []
-  const storedBooks = localStorage.getItem('books')
+  let books = [];
+  const storedBooks = localStorage.getItem('books');
   if (storedBooks) {
-    books = JSON.parse(storedBooks)
+    books = JSON.parse(storedBooks);
   }
   return books;
-}
-export const saveBook = book => {
-  let books = getBooks()
-  const isExist = books.find(b => b.id === book.id)
-  if (isExist) {
-    return toast.error('Already Bookmarked!')
-  }
-  books.push(book)
-  localStorage.setItem('books', JSON.stringify(books))
-  toast.success('Blog Bookmarked Successfully!')
-}
+};
 
-export const deleteBlog = id => {
-  let books = getBooks()
-  const remaining = books.filter(b => b.id !== id)
-  localStorage.setItem('books', JSON.stringify(remaining))
-  toast.success('Blog Removed from Bookmark!')
-}
+export const saveBook = (book, readBooks,wishlistBooks) => {
+  const storedBooks = getBooks();
+
+
+  const isExist = storedBooks.find(b => b.bookId
+    === book.bookId
+  ) || readBooks.find(b => b.bookId
+    === book.bookId
+  );
+
+  if (isExist) {
+    return toast.error('Already Listed Book!');
+  }
+
+  // If not exist and not marked as "Read", add it to the list
+  storedBooks.push(book);
+  localStorage.setItem('books', JSON.stringify(storedBooks));
+  toast.success('Listed Book Successfully!');
+};
