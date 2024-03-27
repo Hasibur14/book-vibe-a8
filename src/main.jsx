@@ -7,6 +7,8 @@ import ListedBooks from './Pages/ListedBooks'
 import MainLayout from './Root/MainLayout'
 import BookDetails from './components/BookDetails'
 
+import Blog from './Pages/Blog'
+import Contact from './Pages/Contact'
 import ReadPage from './Pages/ReadPage'
 import ReadBooks from './components/ReadBooks'
 import Wishlist from './components/Wishlist'
@@ -47,8 +49,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/readPage',
-        element:<ReadPage></ReadPage>
+        element: <ReadPage></ReadPage>
       },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>,
+        // loader: () => fetch(`/data.json`).then(res => res.json())
+      }
     ]
   }
 ]);

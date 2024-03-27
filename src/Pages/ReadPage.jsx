@@ -65,7 +65,8 @@ const ReadPage = () => {
 
     return (
         <>
-            <BarChart
+           <div className="bg-base-200 p-10 mx-28 rounded-xl ">
+           <BarChart className="mt-20"
                 width={1200}
                 height={500}
                 data={data}
@@ -85,6 +86,7 @@ const ReadPage = () => {
                     ))}
                 </Bar>
             </BarChart>
+           </div>
 
         </>
     );

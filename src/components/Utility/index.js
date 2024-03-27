@@ -22,7 +22,7 @@ export const saveBook = (book, readBooks,wishlistBooks) => {
   );
 
   if (isExist) {
-    return toast.error('Already Listed Book!');
+    return toast.error('Already been added!');
   }
 
   // If not exist and not marked as "Read", add it to the list
