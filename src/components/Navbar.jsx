@@ -14,7 +14,7 @@ const Navbar = () => {
             <NavLink to='/readPage' className={({ isActive }) => isActive ? 'text-green-400 font-bold border-2 border-green-400' : 'font-normal'}>Pages to Read</NavLink>
         </li>
         <li>
-            <NavLink to='/blog' className={({ isActive }) => isActive ? 'text-green-400 font-bold border-2 border-green-400' : 'font-normal'}>Blog</NavLink>
+            <NavLink to='/blog' className={({ isActive }) => isActive ? 'text-green-400 font-bold border-2 border-green-400' : 'font-normal'}>Profile</NavLink>
         </li>
         <li>
             <NavLink to='/contact' className={({ isActive }) => isActive ? 'text-green-400 font-bold border-2 border-green-400' : 'font-normal'}>Contact</NavLink>

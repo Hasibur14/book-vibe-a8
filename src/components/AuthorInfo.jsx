@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 
 const AuthorInfo = ({ author }) => {
-console.log("single author info",author)
-
+	
 	const { bookName, authorName, authorAddress, authorContact, authorEmail } = author;
 
 
