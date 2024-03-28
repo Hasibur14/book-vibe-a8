@@ -1,14 +1,44 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
-import dropdown from '../assets/images/Frame (8).png';
 import ReadBooks from '../components/ReadBooks';
+import { getReadBooks, getWishlistBooks } from '../components/Utility';
 import Wishlist from '../components/Wishlist';
 
 
 const ListedBooks = () => {
-    const [tabIndex, setTabIndex] = useState(0)
-    
+    const [tabIndex, setTabIndex] = useState(0);
+    const [sortOption, setSortOption] = useState('rating');
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        const readBooks = getReadBooks();
+        const wishlistBooks = getWishlistBooks();
+        const allBooks = [...readBooks, ...wishlistBooks];
+        setBooks(allBooks);
+
+    }, []);
+
+     console.log("listed form option",books)
+
+     const sortBooks = (option) => {
+        let sortedBooks = [...books]; // Make a copy of the books array
+        switch (option) {
+            case "rating":
+                sortedBooks.sort((a, b) => b.rating - a.rating);
+                break;
+            case "pages":
+                sortedBooks.sort((a, b) => b.totalPages - a.totalPages);
+                break;
+            case "year":
+                sortedBooks.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+                break;
+            default:
+                // No sorting
+                break;
+        }
+        setBooks(sortedBooks);
+    };
 
     return (
         <div>
@@ -17,12 +47,11 @@ const ListedBooks = () => {
             </div>
             <div className="mt-6 text-center">
                 <div className="dropdown dropdown-right dropdown-bottom ">
-                    <div tabIndex={0} role="button" className="btn m-1 bg-green-400 text-white text-lg ">Sort By <img src={dropdown} alt="" /></div>
-                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52">
-                        <li className="hover:bg-sky-400 rounded-lg"><a>Rating</a></li>
-                        <li className="hover:bg-sky-400 rounded-lg"><a>Number of Pages</a></li>
-                        <li className="hover:bg-sky-400 rounded-lg"><a>Publisher Year</a></li>
-                    </ul>
+                    <select value={sortOption} className='m-1 bg-green-400 text-white text-lg p-2 rounded-md ' onChange={(e) => { setSortOption(e.target.value); sortBooks(e.target.value); }}>
+                        <option value="rating">Sort by Rating</option>
+                        <option value="pages">Sort by Pages</option>
+                        <option value="year">Sort by Year</option>
+                    </select>
                 </div>
             </div>
 
