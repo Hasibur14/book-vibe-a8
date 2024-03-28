@@ -1,24 +1,36 @@
 import { useState } from "react";
+import toast from 'react-hot-toast';
 import { useLoaderData } from "react-router-dom";
-import { saveBook } from "./Utility";
+import { saveReadBook, saveWishlistBook } from "./Utility";
 
 const BookDetails = () => {
+
     const book = useLoaderData();
     const { image, bookName, tags = [], author, review, rating, totalPages, publisher, yearOfPublishing, category } = book;
 
-    const [readBooks, setReadBooks] = useState([]);
-    const [wishlistBooks, setWishlistBooks] = useState([]);
+
+    const [readBook, setReadBook] = useState([]);
+    const [wishlistBook, setWishlistBook] = useState([]);
 
     const handleReadBooks = (book) => {
-        saveBook(book, readBooks,wishlistBooks);
-        setReadBooks(prevState => [...prevState, book]);
+        saveReadBook(book, readBook);
+        setReadBook(prevState => [...prevState, book]);
 
     }
     const handleWishlist = (book) => {
-        console.log(book)
-        saveBook(book,readBooks, wishlistBooks);
-        setWishlistBooks(prevState => [...prevState, book]);
+        const isBookInRead = readBook.some(b => b.bookId === book.bookId);
+        const isBookInWishlist = wishlistBook.some(b => b.bookId === book.bookId);
+
+        if (isBookInRead) {
+            toast.error('This book is already marked as read.');
+        } else if (isBookInWishlist) {
+            toast.error('This book is already in your wishlist.');
+        } else {
+            saveWishlistBook(book, wishlistBook);
+            setWishlistBook(prevState => [...prevState, book]);
+        }
     }
+
 
     return (
         <div>

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const AuthorInfo = ({ author }) => {
-	
+
 	const { bookName, authorName, authorAddress, authorContact, authorEmail } = author;
 
 
@@ -10,8 +10,8 @@ const AuthorInfo = ({ author }) => {
 			<section className="py-6 bg-base-200 rounded-xl border-2 ">
 				<div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x-2">
 					<div className="py-6 md:py-0 md:px-6">
-						<h1 className="text-3xl font-bold">{bookName}</h1>
-						<p className="pt-2 pb-4 text-2xl font-bold italic">By:  {authorName}</p>
+						<h1 className="text-3xl font-bold text-green-800">{bookName}</h1>
+						<p className="pt-2 pb-4 text-xl font-bold italic">By:  {authorName}</p>
 						<div className="space-y-4">
 							<p className="flex items-center">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2 sm:mr-6">

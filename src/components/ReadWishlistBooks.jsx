@@ -4,8 +4,7 @@ import publisherImg from '../assets/images/publisher.png';
 
 
 const ReadWishlistBooks = ({ book }) => {
-    const { image, bookName, tags, author, category, rating, totalPages, publisher, yearOfPublishing, review } = book;
-
+    const { image, bookName, tags, author, category, rating, totalPages, publisher} = book;
 
     return (
         <>

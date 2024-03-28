@@ -14,9 +14,13 @@ const Blog = () => {
 
     return (
         <div className="lg:px-24 pt-28">
+            <div>
+                <h1 className='text-5xl font-bold'></h1>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 justify-between">
                 {
-                    authors.map(item => <Profile key={item.bookId} profile={item}></Profile> )
+                    authors.map(item => <Profile key={item.bookId} profile={item}></Profile>)
                 }
             </div>
         </div>

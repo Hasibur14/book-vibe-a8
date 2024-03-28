@@ -1,32 +1,50 @@
-// Utility.js
-
 import toast from 'react-hot-toast';
 
-export const getBooks = () => {
-  let books = [];
-  const storedBooks = localStorage.getItem('books');
-  if (storedBooks) {
-    books = JSON.parse(storedBooks);
+// Read Books
+export const getReadBooks = () => {
+  let read = [];
+  const storedReadBooks = localStorage.getItem('readBooks');
+  if (storedReadBooks) {
+    read = JSON.parse(storedReadBooks);
   }
-  return books;
+  return read;
 };
 
-export const saveBook = (book, readBooks,wishlistBooks) => {
-  const storedBooks = getBooks();
+export const saveReadBook = (book, readBooks) => {
+  const storedReadBooks = getReadBooks();
 
-
-  const isExist = storedBooks.find(b => b.bookId
-    === book.bookId
-  ) || readBooks.find(b => b.bookId
-    === book.bookId
-  );
+  const isExist = storedReadBooks.find(b => b.bookId === book.bookId) || readBooks.find(b => b.bookId === book.bookId);
 
   if (isExist) {
-    return toast.error('Already been added!');
+    return toast.error('Already added to read books!');
   }
 
-  // If not exist and not marked as "Read", add it to the list
-  storedBooks.push(book);
-  localStorage.setItem('books', JSON.stringify(storedBooks));
-  toast.success('Listed Book Successfully!');
+  storedReadBooks.push(book);
+  localStorage.setItem('readBooks', JSON.stringify(storedReadBooks));
+  toast.success('Added to read books successfully!');
+};
+
+
+// Wishlist Books
+export const getWishlistBooks = () => {
+  let wishlist = [];
+  const storedWishlistBooks = localStorage.getItem('wishlistBooks');
+  if (storedWishlistBooks) {
+    wishlist = JSON.parse(storedWishlistBooks);
+  }
+  return wishlist;
+};
+
+export const saveWishlistBook = (book, wishlistBooks) => {
+  const storedWishlistBooks = getWishlistBooks();
+
+  const isExist = storedWishlistBooks.find(b => b.bookId === book.bookId) || wishlistBooks.find(b => b.bookId === book.bookId);
+
+  if (isExist) {
+    return toast.error('Already added to wishlist!');
+  }
+
+  storedWishlistBooks.push(book);
+  localStorage.setItem('wishlistBooks', JSON.stringify(storedWishlistBooks));
+  toast.success('Added to wishlist successfully!');
 };

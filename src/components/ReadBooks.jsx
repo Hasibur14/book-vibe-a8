@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import ReadWishlistBooks from "./ReadWishlistBooks";
-import { getBooks } from "./Utility";
+import { getReadBooks } from "./Utility";
 
 const ReadBooks = () => {
 
-    const [books, setBooks] = useState([]);
-
+    const [readBooks, setReadBooks] = useState([]);
+  
     useEffect(() => {
-        const storedBooks = getBooks();
-        setBooks(storedBooks);
+        const storedReadBooks =getReadBooks();
+       setReadBooks(storedReadBooks);
     }, []);
 
 
     return (                                  
         <div>
            {
-                books.map(book =><ReadWishlistBooks key={book.id} book={book}></ReadWishlistBooks> )
+               readBooks.map(book =><ReadWishlistBooks key={book.id} book={book}></ReadWishlistBooks> )
             }
         </div>
     );

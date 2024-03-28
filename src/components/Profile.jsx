@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 
 const Profile = ({ profile }) => {
     const { bookName, authorName, image } = profile;
@@ -40,5 +42,16 @@ const Profile = ({ profile }) => {
         </div>
     );
 };
+
+
+
+Profile.propTypes = {
+    profile: PropTypes.shape({
+        bookName: PropTypes.string.isRequired,
+        authorName: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired
+    }).isRequired
+};
+
 
 export default Profile;
