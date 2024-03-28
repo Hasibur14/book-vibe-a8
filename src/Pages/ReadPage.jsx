@@ -26,7 +26,8 @@ const ReadPage = () => {
     };
 
     return (
-        <div className="bg-base-200 p-10 mx-28 rounded-xl pt-44">
+       <div className="pt-28">
+         <div className="bg-base-200 p-10 mx-28 rounded-xl ">
             {books && books.length > 0 ? (
                 <BarChart
                     width={1200}
@@ -52,6 +53,7 @@ const ReadPage = () => {
                 <div>No data available</div>
             )}
         </div>
+       </div>
     );
 };
 

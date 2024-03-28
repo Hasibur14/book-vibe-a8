@@ -10,6 +10,7 @@ import BookDetails from './components/BookDetails'
 import Blog from './Pages/Blog'
 import Contact from './Pages/Contact'
 import ReadPage from './Pages/ReadPage'
+import ErrorPage from './components/ErrorPage'
 import ReadBooks from './components/ReadBooks'
 import Wishlist from './components/Wishlist'
 import './index.css'
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -38,7 +40,7 @@ const router = createBrowserRouter([
         element: <ListedBooks></ListedBooks>,
         children: [
           {
-            path: '/listedBooks/readBooks',
+           index: true,
             element: <ReadBooks></ReadBooks>
           },
           {

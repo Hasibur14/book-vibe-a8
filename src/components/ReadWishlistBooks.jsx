@@ -1,11 +1,16 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import location from '../assets/images/location.png';
 import page from '../assets/images/page.png';
 import publisherImg from '../assets/images/publisher.png';
 
 const ReadWishlistBooks = ({ book }) => {
     const { image, bookName, tags, author, category, rating, totalPages, publisher,yearOfPublishing} = book;
+
+
+    const handleViewDetails = () => {
+        history.push(`/book/${book.bookId}`);
+    };
+
 
     return (
         <>
@@ -49,7 +54,7 @@ const ReadWishlistBooks = ({ book }) => {
                             <div className="bg-orange-100 p-2 rounded-md">
                                 <p className="text-orange-400">Rating: {rating}</p>
                             </div>
-                            <Link className="btn bg-green-400 text-white">View Details</Link>
+                            <div onClick={handleViewDetails} className="btn bg-green-400 text-white">View Details</div>
                              </div>
                     </div>
                 </div>
